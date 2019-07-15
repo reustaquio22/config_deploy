@@ -1,0 +1,12 @@
+---
+# role vars
+config_deploy_before"{{ config_to_deploy['before'] | default(omit) }}"
+config_deploy_parents"{{ config_to_deploy['parents'] | default(omit) }}"
+config_deploy_lines"{{ config_to_deploy['lines'] | default(omit) }}"
+config_deploy_after"{{ config_to_deploy['after'] | default(omit) }}"
+config_deploy_file"{{ config_to_deploy['file'] | default(omit) }}"
+config_deploy_match"{{ config_to_deploy['match'] | default(omit) }}"
+config_deploy_replace"{{ config_to_deploy['replace'] | default(omit) }}" 
+config_deploy_save"{{ config_to_deploy['save'] | default(omit) }}"
+config_deploy_check_mode: False
+

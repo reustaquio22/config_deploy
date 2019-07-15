@@ -1,0 +1,17 @@
+---
+- name: "DEPLOY CONFIGS TO IOS DEVICE"
+  ios_config:
+    before: "{{ config_deploy_before }}"
+    parents: "{{ config_deploy_parents }}"
+    lines: "{{ config_deploy_lines }}"
+    after: "{{ config_deploy_after }}"
+    src: "{{ config_deploy_file }}"
+    match: "{{ config_deploy_match }}"
+    replace: "{{ config_deploy_replace }}"
+    save_when: "{{ config_deploy_save }}"
+  loop: "configs_to_deploy"
+  loop_control:
+    loop_var: "config_to_deploy"
+  register: "config_results"
+  check_mode: "{{ config_deploy_check_mode }}"
+
